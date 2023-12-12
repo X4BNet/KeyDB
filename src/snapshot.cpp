@@ -168,6 +168,7 @@ void redisDbPersistentData::restoreSnapshot(const redisDbPersistentDataSnapshot 
     dictEmpty(m_pdictTombstone, nullptr);
     endSnapshot(psnapshot);
     serverAssert(size() == expectedSize);
+    m_numexpires = psnapshot->m_numexpires;
 }
 
 // This function is all about minimizing the amount of work done under global lock
