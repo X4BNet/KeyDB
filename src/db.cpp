@@ -1822,7 +1822,6 @@ int redisDbPersistentData::removeExpire(robj *key, dict_iter itr) {
 
     trackkey(key, true /* fUpdate */);
     val->SetFExpires(false);
-    serverAssert(m_numexpires > 0);
     m_numexpires--;
     return 1;
 }

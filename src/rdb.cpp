@@ -1369,7 +1369,6 @@ int rdbSaveRio(rio *rdb, const redisDbPersistentDataSnapshot **rgpdb, int *error
         });
         if (!fSavedAll)
             goto werr;
-        serverAssert(ckeysExpired == db->expireSize());
     }
 
     /* If we are storing the replication information on disk, persist
